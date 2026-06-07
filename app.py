@@ -19,7 +19,10 @@ DATABASE_URL = st.secrets["DATABASE_URL"]
 
 @st.cache_resource
 def get_conn():
-    return psycopg2.connect(DATABASE_URL, sslmode="require")
+    url = DATABASE_URL
+    if "sslmode" not in url:
+        url += ("&" if "?" in url else "?") + "sslmode=require"
+    return psycopg2.connect(url)
 
 def run(sql, params=(), fetch=None):
     conn = get_conn()
