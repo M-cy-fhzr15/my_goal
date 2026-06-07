@@ -1,34 +1,22 @@
-# 🎯 Mon Objectif Épargne
+# 🎯 Budget Tracker — Suivi d'objectif d'épargne
 
-Application Streamlit de suivi budgétaire avec avatar animé.
+Application web de suivi budgétaire construite avec **Python** et **Streamlit**. Elle permet de définir un objectif d'épargne, de saisir ses revenus et dépenses au quotidien, et de visualiser sa progression en temps réel grâce à un avatar animé qui avance vers la ligne d'arrivée.
 
-## Installation
+## Fonctionnalités
 
-```bash
-pip install -r requirements.txt
-```
+- **Objectif personnalisable** — montant cible, date limite, solde de départ
+- **Revenus fixes** — revenu quotidien pré-rempli automatiquement, avec gestion d'un jour sans revenu (ex : dimanche)
+- **Saisie journalière** — revenus et dépenses enregistrés par date, modifiables à tout moment
+- **Avatar animé** 🏃‍♀️ — se déplace sur une route proportionnellement à la progression vers l'objectif
+- **Barre de progression** — pourcentage atteint avec dégradé visuel
+- **Tableau de bord** — solde actuel, montant restant, jours ouvrés restants, projection finale avec indicateur de faisabilité
+- **Historique complet** — tableau de toutes les entrées + graphe d'évolution du solde cumulé
+- **Stockage local** — données sauvegardées dans une base SQLite (`budget.db`) dans le même dossier que l'application
 
-## Lancement
+## Stack technique
 
-```bash
-streamlit run app.py
-```
-
-L'app s'ouvre automatiquement sur http://localhost:8501
-
-## Utilisation
-
-1. **Configurer** dans la barre latérale :
-   - Ton solde de départ
-   - Ton objectif (ex: 1 200 000 Ar)
-   - La date limite (ex: 31 août 2025)
-   - Ton revenu fixe quotidien et le jour sans revenu
-
-2. **Saisir chaque jour** tes revenus et dépenses
-
-3. **Suivre** la progression avec l'avatar 🏃‍♀️ qui avance vers le drapeau 🏁
-
-## Données
-
-Toutes tes données sont sauvegardées localement dans `budget.db` (SQLite).
-Tu peux le sauvegarder comme backup.
+- Python 3.8+
+- Streamlit
+- SQLite (via le module standard `sqlite3`)
+- Pandas
+- 
